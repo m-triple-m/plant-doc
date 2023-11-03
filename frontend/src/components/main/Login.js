@@ -30,7 +30,8 @@ const Login = () => {
       password: "",
     },
 
-    onSubmit: async (values) => {
+    onSubmit: async (values, {setSubmitting}) => {
+
       console.log(values);
       const res = await fetch(`${process.env.REACT_APP_API_URL}/user/authenticate`, {
         method: 'POST',
@@ -45,6 +46,7 @@ const Login = () => {
         const data = await res.json();
         console.log(data);
         setLoggedIn(true);
+        setSubmitting(false);
         if(data.role === 'admin'){
           sessionStorage.setItem('admin', JSON.stringify(data));
           navigate('/admin/managecure');
@@ -99,8 +101,10 @@ const Login = () => {
                         <button
                           className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                           type="submit"
+                          disabled={loginForm.isSubmitting}
                         >
-                          Log in
+                          { loginForm.isSubmitting ? <span className="spinner-border spinner-border-sm"></span> : '' }
+                          &nbsp;Log in
 
                         </button>
                         <a className="text-muted" href="/main/forgetpassword">
@@ -128,7 +132,7 @@ const Login = () => {
                       src="/images/gardener_constant.gif"
                       height="600"
                       className="img-fluid"
-                      alt="sample image"
+                      alt="sample"
                     />
 
                     <h4 className="mb-4">We are more than just a company</h4>

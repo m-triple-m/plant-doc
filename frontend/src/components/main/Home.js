@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -31,9 +32,9 @@ const Home = () => {
                         {' '}
                         <span>Happiness is turning&nbsp;</span> <br /> <span className="text-success">your space into a Garden</span>{' '}
                       </h1>{' '}
-                      <a
+                      <Link
                         className="btn        btn-success btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
-                        href="/user/predict"
+                        to="/user/predict"
                         role="button"
                         aria-controls="#picker-editor"
                         draggable="false"
@@ -41,18 +42,18 @@ const Home = () => {
                       >
                         {' '}
                         Get started
-                      </a>{' '}
-                      <a
+                      </Link>{' '}
+                      <Link
                         className="btn        btn-outline-success btn-lg py-3 px-5 ripple-surface-primary"
                         data-ripple-color="primary"
-                        href="/main/aboutus"
+                        to="/main/aboutus"
                         role="button"
                         aria-controls="#picker-editor"
                         draggable="false"
                         style={{}}
                       >
                         Learn more
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -178,9 +179,9 @@ const Home = () => {
                       then analyzes the image and compares it to its database of known plant diseases. Based on the characteristics of the image, the application will then provide
                       a diagnosis of any potential diseases affecting the plant.
                     </p>{' '}
-                    <a className="btn   btn-success btn-rounded btn-lg" href="/main/aboutus" role="button" aria-controls="#picker-editor" draggable="false" style={{}}>
+                    <Link className="btn   btn-success btn-rounded btn-lg" to="/main/aboutus" role="button" aria-controls="#picker-editor" draggable="false" style={{}}>
                       Learn more
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -302,12 +303,6 @@ const Home = () => {
               </div>
             </div>
           </section>
-        </section>
-        {/**/}
-        <section style={{ backgroundColor: '#fffaf0' }}>
-          <div className="container">
-            <video src="/images/plant_animated.mp4" autoPlay loop className="d-block m-auto"></video>
-          </div>
         </section>
       </div>
     </div>

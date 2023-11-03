@@ -11,9 +11,9 @@ const CurePage = () => {
   const navigate = useNavigate();
 
   const fetchCureData = async () => {
-    console.log(apiUrl + '/cure/getbyid/' + cureData.itemId);
+    // console.log(`${process.env.REACT_APP_API_URL}/cure/getbyid` + cureData.itemId);
     if (cureData.itemId) {
-      const res = await fetch(apiUrl + '/cure/getbyid/' + cureData.itemId);
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/cure/getbyid` + cureData.itemId);
       console.log(res.status);
       const data = await res.json();
       console.log(data);
@@ -31,7 +31,7 @@ const CurePage = () => {
       <div className="card">
         <div className="row">
           <div className="col-3">
-            <img className="w-100" style={{ display: 'block', margin: 'auto' }} src={apiUrl + '/' + productData.image} alt="" />
+            <img className="w-100" style={{ display: 'block', margin: 'auto' }} src={process.env.REACT_APP_API_URL + '/' + productData.image} alt="" />
           </div>
           <div className="col-9">
             <div className="card-body">

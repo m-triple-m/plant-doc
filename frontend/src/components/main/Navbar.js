@@ -75,9 +75,9 @@ const Navbar = () => {
           {
             loggedIn && (
           <div className="dropdown">
-            <a
+            <NavLink
               className="dropdown-toggle d-flex align-items-center hidden-arrow"
-              href="/user/userprofile"
+              to="/user/userprofile"
               id="navbarDropdownMenuAvatar"
               role="button"
               data-mdb-toggle="dropdown"
@@ -90,7 +90,7 @@ const Navbar = () => {
                 alt="Black and White Portrait of a Man"
                 loading="lazy"
               />
-            </a>
+            </NavLink>
             <ul
               className="dropdown-menu dropdown-menu-end"
               aria-labelledby="navbarDropdownMenuAvatar"

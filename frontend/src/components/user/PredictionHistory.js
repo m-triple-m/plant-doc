@@ -59,7 +59,7 @@ const PredictionHistory = () => {
                                 height: 100,
                                 width: 150,
                                 objectFit: 'cover'
-                            }} src={'http://localhost:5000/'+prediction.image} alt="" />
+                            }} src={`${process.env.REACT_APP_API_URL}/${prediction.image}`} alt="" />
 
                             </td>
                             <td className='h5'>

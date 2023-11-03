@@ -18,7 +18,7 @@ const OrderProduct = () => {
   const [product, setProduct] = useState(JSON.parse(sessionStorage.getItem('productData')));
 
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch(`${process.env.REACT_APP_API_URL}/create-payment-intent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: product.price })

@@ -26,7 +26,7 @@ const ShoppingCart = () => {
   useEffect(() => {
     if (getCartTotal() > 0) {
       // Create PaymentIntent as soon as the page loads
-      fetch('http://localhost:5000/create-payment-intent', {
+      fetch(`${process.env.REACT_APP_API_URL}/create-payment-intent`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: getCartTotal() })
@@ -57,7 +57,7 @@ const ShoppingCart = () => {
           <div
             className="cart-item-placeholder"
             style={{
-              backgroundImage: `url('${apiUrl}/${item.image}')`
+              backgroundImage: `url('${process.env.REACT_APP_API_URL}/${item.image}')`
             }}
           ></div>
         </div>

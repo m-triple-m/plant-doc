@@ -3,7 +3,7 @@ import app_config from '../../config';
 import Swal from 'sweetalert2';
 
 const PredictPlantDisease = () => {
-  const { apiUrl, modelPath } = app_config;
+  const { modelPath } = app_config;
 
   const [model, setModel] = useState(null);
   const [maxPredictions, setMaxPredictions] = useState(null);
@@ -39,7 +39,7 @@ const PredictPlantDisease = () => {
   const uploadFile = (file) => {
     const fd = new FormData();
     fd.append('myfile', file);
-    fetch(apiUrl + '/util/uploadfile', {
+    fetch(process.env.REACT_APP_API_URL + '/util/uploadfile', {
       method: 'POST',
       body: fd
     }).then((res) => {
@@ -50,7 +50,7 @@ const PredictPlantDisease = () => {
   };
 
   const saveHistory = async (res) => {
-    const response = await fetch(`${apiUrl}/prediction/add`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/prediction/add`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

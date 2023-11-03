@@ -59,6 +59,12 @@ const Signup = () => {
         });
 
         navigate('/main/login');
+      }else{
+        Swal.fire({
+          icon : "error", 
+          title: "error",
+          text: "something went wrong",
+        })
       }
 
     },
@@ -176,7 +182,7 @@ const Signup = () => {
                     <img
                       src="/images/lady_plant.gif"
                       className="img-fluid"
-                      alt="Sample image"
+                      alt="Sample"
                     />
                   </div>
                 </div>

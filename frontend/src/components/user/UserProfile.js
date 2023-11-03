@@ -7,13 +7,12 @@ const UserProfile = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
   const url = app_config.apiUrl;
-  const { themeColorLight, apiUrl } = app_config;
   const [passwordHidden, setPasswordHidden] = useState(true);
  
   const [imageList, setImageList] = useState([]);
 
   const getUserImages = async () => {
-    const res = await fetch(url + '/image/getbyuser/' + currentUser._id);
+    const res = await fetch(process.env.REACT_APP_API_URL + '/image/getbyuser/' + currentUser._id);
     const images = await res.json();
     console.log(images);
     setImageList(images);
@@ -26,7 +25,7 @@ const UserProfile = () => {
 
   const updateProfile = async (data) => {
     console.log(data);
-    const res = await fetch(url + '/user/update/' + currentUser._id, {
+    const res = await fetch(process.env.REACT_APP_API_URL + '/user/update/' + currentUser._id, {
       method: 'PUT',
       body: JSON.stringify(data),
       headers: {
@@ -45,7 +44,7 @@ const UserProfile = () => {
     // setSelImage(file.name);
     const fd = new FormData();
     fd.append('myfile', file);
-    fetch(url + '/util/uploadfile', {
+    fetch(process.env.REACT_APP_API_URL + '/util/uploadfile', {
       method: 'POST',
       body: fd
     }).then((res) => {
@@ -95,7 +94,7 @@ const UserProfile = () => {
                 <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#000', height: 200 }}>
                   <div className="ms-4 mt-5 d-flex flex-column" style={{ width: 150 }}>
                     <img
-                      src={apiUrl+'/'+(currentUser.avatar ? currentUser.avatar : 'user-placeholder.jpg')}
+                      src={process.env.REACT_APP_API_URL+'/'+(currentUser.avatar ? currentUser.avatar : 'user-placeholder.jpg')}
                       alt="user profile"
                       className="img-fluid img-thumbnail mt-4 mb-2"
                       style={{ width: 150, zIndex: 1 }}
@@ -176,12 +175,7 @@ const UserProfile = () => {
                       onChange={profileForm.handleChange}
                       className="form-control"
                     />
-                   
                   </div>
-                  
-                  
-                 
-                  
                   <button className="btn btn-primary"> <i class="fa-solid fa-arrows-rotate"></i> Update Profile</button>
                 </form>
                   </div>
@@ -197,7 +191,7 @@ const UserProfile = () => {
                     {
                       imageList.map((image, index) => (
                         <div className="col-4 mb-2">
-                          <img src={apiUrl+'/'+image.file} alt="image 1" className="w-100 rounded-3" />
+                          <img src={process.env.REACT_APP_API_URL+'/'+image.file} alt="random" className="w-100 rounded-3" />
                         </div>
                       ))
                     }

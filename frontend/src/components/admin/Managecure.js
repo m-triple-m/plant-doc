@@ -11,14 +11,13 @@ const AddCure = () => {
 
   const [selImage, setSelImage] = useState('');
 
-  const { apiUrl } = app_config;
 
   const uploadImage = async (e) => {
     const file = e.target.files[0];
     setSelImage(file);
     const fd = new FormData();
     fd.append('myfile', file);
-    fetch(apiUrl + '/util/uploadfile', {
+    fetch(process.env.REACT_APP_API_URL + '/util/uploadfile', {
       method: 'POST',
       body: fd
     }).then((res) => {
@@ -42,7 +41,9 @@ const AddCure = () => {
       values.image = selImage.name;
       console.log(values);
 
-      const res = await fetch('http://localhost:5000/cure/add', {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/cure
+      
+      /add`, {
         method: 'POST',
         body: JSON.stringify(values),
         headers: {
