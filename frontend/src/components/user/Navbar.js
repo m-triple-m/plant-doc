@@ -19,7 +19,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#358f66' }}>
 
         {/* Container wrapper */}
-        <div className="container-fluid">
+        <div className="container">
           {/* Toggle button */}
           <button
             className="navbar-toggler"
@@ -48,16 +48,6 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/main/home">
                   Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/login">
-                  Login
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/main/signup">
-                  Signup
                 </NavLink>
               </li>
               <li className="nav-item">

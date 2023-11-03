@@ -93,7 +93,9 @@ const Prediction = () => {
   }
 
   const predictFromImage = async () => {
+    setPredictionLoading(true);
     const prediction = await model.predict(loadedImage);
+    setPredictionLoading(false);
     console.log(prediction);
     let res = predictionResultExtractor(prediction);
     console.log(res);
@@ -229,7 +231,14 @@ const Prediction = () => {
 
           {loadedImage && (
             <button className="btn btn-primary mt-5" onClick={predictFromImage}>
-              Predict Disease
+              {predictionLoading ? (
+                <>
+                  <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  &nbsp; Predicting...
+                </>
+              ) : (
+                'Predict Disease'
+              )}
             </button>
           )}
         </div>

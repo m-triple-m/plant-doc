@@ -85,13 +85,13 @@ const UserProfile = () => {
   });
 
   return (
-    <div>
+    <div className='profile-bg'>
       <section className="h-100 gradient-custom-2">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-lg-9 col-xl-7">
               <div className="card">
-                <div className="rounded-top text-white d-flex flex-row" style={{ backgroundColor: '#000', height: 200 }}>
+                <div className="rounded-top text-white d-flex flex-row" style={{ backgroundSize: 'cover', backgroundImage: `linear-gradient(0deg, #000000ad, #0000001a),url("https://static.vecteezy.com/system/resources/previews/007/736/730/original/seamless-pattern-of-houseplants-in-flowerpots-cartoon-colorful-plants-on-beige-background-vector.jpg")`, height: 200 }}>
                   <div className="ms-4 mt-5 d-flex flex-column" style={{ width: 150 }}>
                     <img
                       src={process.env.REACT_APP_API_URL+'/'+(currentUser.avatar ? currentUser.avatar : 'user-placeholder.jpg')}

@@ -74,4 +74,15 @@
   background-image: linear-gradient(0deg, #ffffff78, #ffffff78), url("https://static.vecteezy.com/system/resources/previews/002/058/893/non_2x/exotic-tropical-plant-background-free-vector.jpg");
   background-size: cover;
   background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.profile-bg{
+  background-image: url('https://i.pinimg.com/originals/11/15/6d/11156d10e37e66bc56f6011fc8089743.png');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.home-bg{
+  background-color: #b4ffe5;
 }

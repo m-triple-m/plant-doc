@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div>
+    <div className='home-bg'>
       <div data-draggable="true" className="" style={{ position: 'relative' }} draggable="false">
         {/**/}
         {/**/}
