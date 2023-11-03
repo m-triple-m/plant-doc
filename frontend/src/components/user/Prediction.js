@@ -189,7 +189,7 @@ const Prediction = () => {
                 <div className="">
                   {camOpen ? (
                     <>
-                      <Webcam ref={webcamRef} style={{ width: '100%', height: '100%' }} screenshotFormat="image/jpeg" />
+                      <Webcam videoConstraints={{facingMode : 'environment', FACING_MODE_ENVIRONMENT : "environment"}} ref={webcamRef} style={{ width: '100%', height: '100%' }} screenshotFormat="image/jpeg" />
                       <button style={{ position: 'absolute', top: 15, left: 15 }} className="btn btn-primary" onClick={captureImage}>
                         <i class="fa fa-camera" aria-hidden="true"></i> Capture Image
                       </button>
