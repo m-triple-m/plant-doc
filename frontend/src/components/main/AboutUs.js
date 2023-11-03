@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AboutUs = () => {
   return (
@@ -47,25 +48,25 @@ const AboutUs = () => {
                     <span>Keeping Plants Healthy,</span> <br />{" "}
                     <span className="text-success"> One Prediction at a Time</span>{" "}
                   </h1>{" "}
-                  <a
+                  <Link
                     className="btn  btn-success btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
-                    href="/user/predict"
+                    to="/user/predict"
                     role="button"
                     aria-controls="#picker-editor"
                   >
                     Predict disease
-                  </a>{" "}
-                  <a
+                  </Link>{" "}
+                  <Link
                       className="btn  btn-lg py-3 px-5 ripple-surface-primary"
                       data-ripple-color="primary"
-                      href="/main/signup"
+                      to="/main/signup"
                       role="button"
                       aria-controls="#picker-editor"
                       draggable="false"
                       style={{}}
                     >
                       signup
-                    </a>{" "}
+                    </Link>{" "}
                 </div>{" "}
               </div>{" "}
             </div>{" "}
