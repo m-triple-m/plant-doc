@@ -4,7 +4,7 @@ import React from "react";
 import Swal from "sweetalert2";
 import { MDBInput } from 'mdb-react-ui-kit';
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "../../context/UserProvider";
 
 const Login = () => {
@@ -107,20 +107,20 @@ const Login = () => {
                           &nbsp;Log in
 
                         </button>
-                        <a className="text-muted" href="/main/forgetpassword">
+                        <Link className="text-muted" to="/main/forgetpassword">
                           Forgot password?
-                        </a>
+                        </Link>
                       </div>
                       <div className="d-flex align-items-center justify-content-center pb-4" >
                         <hr className="bg-dark w-25 me-3" />
                         <p className="mb-0 me-2">Don't have an account?</p>
-                        <a className="text-muted me-3"
+                        <Link className="text-muted me-3"
                           role="button"
-                          href="/main/signup">
+                          to="/main/signup">
                           <button type="button" className="btn btn-outline-danger">
                             Create new
                           </button>
-                        </a>
+                        </Link>
                       </div>
                     </form>
                   </div>
