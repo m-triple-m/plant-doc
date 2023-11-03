@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
 
@@ -60,16 +60,16 @@ const Navbar = () => {
             <div className="d-flex align-items-center">
               {/* Avatar */}
               <div className="dropdown">
-                <a
+                <Link
                   className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                  href="/user/userprofile"
+                  to="/user/userprofile"
                   id="navbarDropdownMenuAvatar"
                   role="button"
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
                   <img src={process.env.REACT_APP_API_URL + '/' + currentUser.avatar} className="rounded-circle" height={25} width={25} style={{objectFit: 'cover'}} alt="Black and White Portrait of a Man" loading="lazy" />
-                </a>
+                </Link>
                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                   <li>
                     <NavLink className="dropdown-item" to="/user/userprofile">

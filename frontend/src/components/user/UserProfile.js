@@ -70,13 +70,7 @@ const UserProfile = () => {
       }
     });
     return;
-    const res = await fetch(url + '/user/delete/' + currentUser._id, {
-      method: 'DELETE'
-    });
-    if (res.status === 200) {
-      sessionStorage.removeItem('user');
-      window.location.href = '/';
-    }
+   
   };
 
   const profileForm = useFormik({

@@ -162,8 +162,7 @@ const Signup = () => {
                           className="form-check-label"
                           htmlFor="form2Example3"
                         >
-                          I agree all statements in{" "}
-                          <a href="main/termscondition">Terms of service</a>
+                          I agree all statements in Terms of service
                         </label>
                       </div>
                       <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
