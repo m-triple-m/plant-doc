@@ -38,16 +38,21 @@ const Navbar = () => {
                     Home
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/main/login">
-                    Login
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/main/signup">
-                    Signup
-                  </NavLink>
-                </li>
+                {!loggedIn && (
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/main/login">
+                        Login
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/main/signup">
+                        Signup
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/main/aboutus">
                     About Us
@@ -69,7 +74,15 @@ const Navbar = () => {
                     data-mdb-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    <img src={process.env.REACT_APP_API_URL + '/' + currentUser.avatar} className="rounded-circle" height={25} width={25} style={{objectFit: 'cover'}} alt="Black and White Portrait of a Man" loading="lazy" />
+                    <img
+                      src={process.env.REACT_APP_API_URL + '/' + currentUser.avatar}
+                      className="rounded-circle"
+                      height={25}
+                      width={25}
+                      style={{ objectFit: 'cover' }}
+                      alt="Black and White Portrait of a Man"
+                      loading="lazy"
+                    />
                   </NavLink>
                   <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                     <li>
