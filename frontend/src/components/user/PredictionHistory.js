@@ -9,7 +9,7 @@ const PredictionHistory = () => {
     const [predictionList, setPredictionList] = useState([]);
 
     const getUserHistory = async () => {
-        const response = await fetch(`${apiUrl}/prediction/getbyuser/${currentUser._id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/prediction/getbyuser/${currentUser._id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ const PredictionHistory = () => {
     };
 
     const deletePrediction = async (id) => {
-        const response = await fetch(`${apiUrl}/prediction/delete/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/prediction/delete/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

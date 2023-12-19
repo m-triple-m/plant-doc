@@ -12,7 +12,6 @@ import UserProvider from './context/UserProvider';
 import AdminProvider from './context/AdminProvider';
 import Prediction from './components/user/Prediction';
 import CurePage from './components/user/CurePage';
-
 import Forgetpassword from './components/main/Forgetpassword';
 import UserProfile from './components/user/UserProfile';
 
